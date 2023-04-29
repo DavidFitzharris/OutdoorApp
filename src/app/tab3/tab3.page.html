@@ -1,17 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Registraion
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <ion-item>
+      <ion-label position="stacked">Email:</ion-label>
+      <ion-input type="email" id="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password:</ion-label>
+      <ion-input type="password" id="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit">Login</ion-button>
+  </form>
+</ion-content>
 
+<ion-content>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Name:</ion-label>
+      <ion-input type="text" id="name" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email:</ion-label>
+      <ion-input type="email" id="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password:</ion-label>
+      <ion-input type="password" id="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit">Register</ion-button>
+  </form>
+</ion-content>
+
+<ion-content>
   <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>

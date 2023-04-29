@@ -1,17 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Naismiths Rule
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content padding>
+
+  <h1>Naismith Rule Calculator</h1>
+  <img src="assets/imgs/map_compass.jpg"  alt="Map & Compass">
+  <p>Tool used to estimate the time of your journey, select all fields for valid result</p>
+
+  <!-- Inputs for the calculator -->
+  <ion-item>
+    <ion-label position="stacked" id="distance">Distance in meters</ion-label>
+    <ion-input placeholder="m" type="number" [(ngModel)]="distance"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked" id="height" >Height gained in meters</ion-label>
+    <ion-input placeholder="m" type="number" [(ngModel)]="height"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Carrying heavy weight?</ion-label>
+    <ion-select [(ngModel)]="weight" value="1">
+      <ion-select-option value="1">Yes</ion-select-option>
+      <ion-select-option value="2">No</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Main ground covered</ion-label>
+    <ion-select [(ngModel)]="ground" value="1">
+      <ion-select-option value="1">Trail</ion-select-option>
+      <ion-select-option value="2">Road</ion-select-option>
+      <ion-select-option value="3">Off Track</ion-select-option> 
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Rough <i>walking</i> pace</ion-label>
+    <ion-select [(ngModel)]="pace" value="1">
+      <ion-select-option value="1">Easy</ion-select-option>
+      <ion-select-option value="2">Moderate</ion-select-option>
+      <ion-select-option value="3">Fast</ion-select-option> 
+    </ion-select>
+  </ion-item>
+
+  <ion-button color="light" expand="block" (click)="naiCalc()">calculate</ion-button>
 </ion-content>

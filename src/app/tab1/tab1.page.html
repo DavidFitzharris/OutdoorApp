@@ -1,17 +1,60 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Maps</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!-- <div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+</div> -->
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+<!-- <img [src]="display" alt="Map Image"/> -->
+<google-map height="500px"
+            width="900px"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+</google-map>
+  
+<div>Latitude: {{display?.lat}}</div>
+<div>Longitude: {{display?.lng}}</div>
+
+<!-- <div class="oax-top-cont"></div> -->
+
+
+
+  <!-- Cards to display name and location of trail and link to the url from the array places
+  <ion-content>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Static Map</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let map of mapData">
+        <ion-label>
+          
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content> -->
+
+  <ion-content>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Routes</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let route of routeData">
+        <ion-label>
+          <h2>{{ route.name }}</h2>
+          <p>Distance: {{ route.distance }}</p>
+          <p>Duration: {{ route.duration }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
 </ion-content>
+

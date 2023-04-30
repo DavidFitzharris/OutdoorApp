@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  ion-header {
+    flex-shrink: 0;
+  }
+  
+  ion-content {
+    flex-shrink: 0;
+    height: auto;
+    overflow: auto;
+  }
+  
+  .google-map {
+    flex-shrink: 0;
+    width: 100% !important;
+    height: 500px !important;
+  }
+  
+  ion-title {
+    font-size: 1.2em;
+  }
+  
+  ion-list-header {
+    font-weight: bold;
+  }
+  
+  ion-label {
+    white-space: pre-wrap;
+  }
+  
+  ion-button {
+    margin: 8px;
+  }

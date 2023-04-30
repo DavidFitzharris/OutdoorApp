@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Maps</ion-title>
+    <ion-title>Hiking Data</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +10,7 @@
   </div>
 </div> -->
 
-<ion-content>
+<ion-content class="background-image">
 <!-- <img [src]="display" alt="Map Image"/> -->
 <google-map height="500px"
             width="900px"
@@ -23,7 +23,7 @@
 <div>Latitude: {{display?.lat}}</div>
 <div>Longitude: {{display?.lng}}</div>
 
-</ion-content>
+<!-- </ion-content> -->
 
 <!-- <div class="oax-top-cont"></div> -->
 
@@ -58,11 +58,9 @@
     </ion-list>
   </ion-content> -->
 
-<ion-content>
+<!-- <ion-content> -->
   <ion-header>
-    <ion-title>
       New Hike
-    </ion-title>
 </ion-header>
   <ion-list>
     <form (ngSubmit)="onSubmit()">
@@ -72,7 +70,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Distance:</ion-label>
+        <ion-label position="stacked">Distance(km):</ion-label>
         <ion-input [(ngModel)]="distance" name="distance" type="number" required></ion-input>
       </ion-item>
 
@@ -90,9 +88,27 @@
         <ion-textarea [(ngModel)]="details" name="details" required></ion-textarea>
       </ion-item>
 
-      <ion-button type="submit">Create Hike</ion-button>
+      <ion-button expand="block" type="submit">Create Hike</ion-button>
     </form>
   </ion-list>
+<!-- </ion-content> -->
+
+<!-- <ion-content> -->
+  <ion-list *ngIf="hikingHistory && hikingHistory.length">
+    <ion-item lines="full" *ngFor="let hike of hikingHistory">
+      <ion-label>
+        <h2>Route: {{ hike.routeName }}</h2>
+        <h3>{{ hike.distance }} km</h3>
+        <h3>Rated: {{ hike.difficulty }} </h3>
+        <p>Details: {{ hike.hikeDetails }}</p>
+        <!-- Add more lines for other properties -->
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="!hikingHistory || !hikingHistory.length">
+    <p>No hiking history found.</p>
+  </div>
+  <ion-button expand="block" (click)="getHikeHistory()">Get Hike History</ion-button>
 </ion-content>
 
 

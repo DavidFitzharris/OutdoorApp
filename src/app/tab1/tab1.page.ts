@@ -5,6 +5,7 @@ import { GeolocationService } from '@ng-web-apis/geolocation';
 import { UserService } from '../services/users.services';
 import { AlertController } from '@ionic/angular';
 import { HikesService } from '../services/hikes.service';
+import { response } from 'express';
 //import * as L from 'leaflet';
 
 @Component({
@@ -17,6 +18,8 @@ export class Tab1Page implements OnInit, AfterViewInit {
   currentUser: any;
   currentUserEmail: any;
 
+  //Hiking history display
+  hikingHistory: any[];
   //For hike data
   route: string;
   distance: number;
@@ -100,6 +103,20 @@ move(event: google.maps.MapMouseEvent) {
       .then(res => {
         res.present();
       });
+  }
+
+  getHikeHistory(){
+    console.log(this.currentUserEmail);
+    this.hikeService.getHikingHistory(this.currentUserEmail).subscribe( 
+      response => {
+        console.log(response);
+        this.hikingHistory = response.hikingHistory;
+      },
+      error => {
+        console.log(error);
+      }  
+
+    )
   }
 
 

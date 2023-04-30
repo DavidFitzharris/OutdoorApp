@@ -9,7 +9,10 @@ router.post('/userlogin', authController.login);
 //For registration
 router.post('/register', authController.register);
 
-//For registration
+//For posting hike data
 router.post('/hikeData', hikesData.newHike);
+
+//Getting hike data
+router.get('/hikingHistory/:email', hikesData.getUserHikes);
 
 module.exports = router;

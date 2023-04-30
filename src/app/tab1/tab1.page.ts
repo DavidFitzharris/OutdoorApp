@@ -2,7 +2,10 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MapService } from '../services/map.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GeolocationService } from '@ng-web-apis/geolocation';
-import * as L from 'leaflet';
+import { UserService } from '../services/users.services';
+import { AlertController } from '@ionic/angular';
+import { HikesService } from '../services/hikes.service';
+//import * as L from 'leaflet';
 
 @Component({
   selector: 'app-tab1',
@@ -10,6 +13,15 @@ import * as L from 'leaflet';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit, AfterViewInit {
+  //user details if logged in
+  currentUser: any;
+  currentUserEmail: any;
+
+  //For hike data
+  route: string;
+  distance: number;
+  difficulty: string;
+  details: string;
 
   //Will be used for fetching data and displaying in html doc
   routeData: any = [];
@@ -17,12 +29,17 @@ export class Tab1Page implements OnInit, AfterViewInit {
   display: any = [];
   private map: any;
 
-  constructor(private mapService: MapService, private sanitizer: DomSanitizer) { }
+  constructor(private mapService: MapService, 
+    private userService: UserService, 
+    public alertController: AlertController, 
+    private hikeService: HikesService) { }
 
   ngOnInit() {
     //this.getMapData();
     //this.fetchRouteData();
-    this.map = L.Map;
+    //his.map = L.Map;
+    this.currentUser = this.userService.currentUser;
+    this.currentUserEmail = this.userService.currentUserEmail;
   }
 
   center: google.maps.LatLngLiteral = {
@@ -42,6 +59,44 @@ move(event: google.maps.MapMouseEvent) {
   ngAfterViewInit(): void {
     //this.initMap();
   }
+
+  onSubmit() {
+    //Data to be used to populate new hike data in database
+    const hike = {
+      route: this.route,
+      distance: this.distance,
+      difficulty: this.difficulty,
+      hikeDetails: this.details
+    };
+
+    this.hikeService.hikes(hike).subscribe(
+      response => {
+        console.log(response); 
+      },
+      error => {
+        console.log(error);
+      }
+    );
+
+    //console.log(hike);
+
+  }
+
+  //Display if route added
+  showAlert() {
+    this.alertController
+      .create({
+        header: 'New hike added',
+        subHeader: 'Route name: ' + this.route,
+        message:
+          'Use naismith calculator and packing list to assist on your hike',
+        buttons: ['OK'],
+      })
+      .then(res => {
+        res.present();
+      });
+  }
+
 
   // private initMap(): void {
   //   this.map = L.map('map', {

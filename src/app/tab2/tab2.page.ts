@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { UserService } from '../services/users.services';
 
 @Component({
   selector: 'app-tab2',
@@ -23,7 +24,7 @@ export class Tab2Page {
   finalTime: number;
   resultMessage: number;
 
-  constructor(public alertController: AlertController) {}
+  constructor(public alertController: AlertController, private userService: UserService) {}
 
   naiCalc() {
     // The following takes into account the different variables inputted and adds

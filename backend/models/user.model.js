@@ -15,10 +15,20 @@ const UserSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  //Save unique salt that will be used when logging in
-  salt: { type: String},
-  //creating a map for hiking history
-  hikingHistory: [{ type: Map, of: String, ref: 'Hike' }]
+  salt: { type: String, required:true},
+  hikingHistory: [{ type: Schema.Types.ObjectId, ref: 'Hike' }]
 });
 
+// //For storing hike history
+// const hikingHistory = Schema({
+//   routeName: { type: String },
+//   distance: { type: Number},
+//   difficulty: { type: String },
+//   hikeDetails: { type: String }
+// });
+
+
 module.exports = mongoose.model('User', UserSchema);
+
+
+

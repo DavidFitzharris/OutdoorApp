@@ -23,6 +23,8 @@
 <div>Latitude: {{display?.lat}}</div>
 <div>Longitude: {{display?.lng}}</div>
 
+</ion-content>
+
 <!-- <div class="oax-top-cont"></div> -->
 
 
@@ -41,7 +43,7 @@
     </ion-list>
   </ion-content> -->
 
-  <ion-content>
+  <!-- <ion-content>
     <ion-list>
       <ion-list-header>
         <ion-label>Routes</ion-label>
@@ -54,7 +56,43 @@
         </ion-label>
       </ion-item>
     </ion-list>
-  </ion-content>
+  </ion-content> -->
 
+<ion-content>
+  <ion-header>
+    <ion-title>
+      New Hike
+    </ion-title>
+</ion-header>
+  <ion-list>
+    <form (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="stacked">Route Name:</ion-label>
+        <ion-input [(ngModel)]="route" name="route" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Distance:</ion-label>
+        <ion-input [(ngModel)]="distance" name="distance" type="number" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Difficulty:</ion-label>
+        <ion-select [(ngModel)]="difficulty" name="difficulty" required>
+          <ion-select-option value="easy">Easy</ion-select-option>
+          <ion-select-option value="moderate">Moderate</ion-select-option>
+          <ion-select-option value="hard">Hard</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Hike Details:</ion-label>
+        <ion-textarea [(ngModel)]="details" name="details" required></ion-textarea>
+      </ion-item>
+
+      <ion-button type="submit">Create Hike</ion-button>
+    </form>
+  </ion-list>
 </ion-content>
+
 

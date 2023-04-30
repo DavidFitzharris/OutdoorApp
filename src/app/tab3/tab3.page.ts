@@ -8,6 +8,8 @@ import { UserService } from '../services/users.services';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page implements OnInit {
+  currentUser: any;
+  currentUserEmail: any;
   //Form for registration
   registrationForm: FormGroup = new FormGroup({
     //Required inputs
@@ -31,7 +33,14 @@ export class Tab3Page implements OnInit {
     if (this.loginForm.valid) {  
       this.userService.login(this.loginForm.value).subscribe(
         response => {
-          console.log(response);
+          console.log(response.userDetails);
+          //store user info
+          this.currentUser = response.userDetails.name;
+          this.currentUserEmail = response.userDetails.email;
+          //Methods from user service
+          this.userService.setCurrentUser(this.currentUser);
+          this.userService.setCurrentUserEmail(this.currentUserEmail);
+          console.log(this.currentUser + " ")
           alert(" " + response.message);
         },
         error => {

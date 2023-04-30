@@ -8,23 +8,30 @@ exports.login = async (req, res) => {
     //User from our user model
     const userLogin = await User.findOne({ email: req.body.email });
 
-    //Hash the password for comparison in storage, takes corrisponding salt
-    const hashedPassword = await bcrypt.hash(req.body.password, userLogin.salt);
     if (userLogin) {
-      if(userLogin.password == hashedPassword){
-        return res.status(201).json({ message: 'User ' + userLogin.name + ' Logged in' });
-      }else{
-        // //For testing
-        // return res.status(401).json({ message: 'HashedPassword' + hashedPassword + ' Save HPassword: ' + userLogin.password });
+      //Hash the password for comparison in storage, takes corrisponding salt saved
+      const hashedPassword = await bcrypt.hash(req.body.password, userLogin.salt);
+      //return res.status(201).json({ message: 'User ' + hashedPassword + ' working so far' });
+      if (userLogin.password == hashedPassword) {
+        return res.status(201).json({
+          message: 'User ' + userLogin.name + ' Logged in',
+          userDetails: {
+            name: userLogin.name,
+            email: userLogin.email,
+          },
+        });
+      } else {
+        //For testing
+        //return res.status(401).json({ message: 'HashedPassword' + hashedPassword + ' Save HPassword: ' + userLogin.password });
         return res.status(401).json({ message: 'User ' + req.body.email + ' password incorrect' });
       }
 
-    }else{
+    } else {
       return res.status(401).json({ message: 'User ' + req.body.email + ' not recognised' });
     }
   } catch (error) {
     //Send an error response
-    res.status(500).json({ message: 'Server error. Please try again later.' });
+    res.status(500).json({ message: 'Server error with login. Check details or please try again later.' });
   }
 };
 

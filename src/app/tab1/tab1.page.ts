@@ -38,8 +38,12 @@ export class Tab1Page implements OnInit, AfterViewInit {
     //this.getMapData();
     //this.fetchRouteData();
     //his.map = L.Map;
-    this.currentUser = this.userService.currentUser;
-    this.currentUserEmail = this.userService.currentUserEmail;
+    this.userService.currentUser.subscribe(user => {
+      this.currentUser = user;
+    });
+    this.userService.currentUserEmail.subscribe(email => {
+      this.currentUserEmail = email;
+    });
   }
 
   center: google.maps.LatLngLiteral = {
@@ -66,7 +70,8 @@ move(event: google.maps.MapMouseEvent) {
       route: this.route,
       distance: this.distance,
       difficulty: this.difficulty,
-      hikeDetails: this.details
+      hikeDetails: this.details,
+      userEmail: this.currentUserEmail
     };
 
     this.hikeService.hikes(hike).subscribe(

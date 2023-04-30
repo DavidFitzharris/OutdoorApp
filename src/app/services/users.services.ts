@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,12 @@ export class UserService {
   // }
 
   login(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/userlogin`, userData);
+    return this.http.post(`${this.apiUrl}/userlogin`, userData).pipe(
+      tap(response => {
+        this.currentUserSource.next(response.userDetails.name);
+        this.currentUserEmailSource.next(response.userDetails.email);
+      })
+    );;
   }
 
   //Updating current user details

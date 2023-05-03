@@ -95,7 +95,8 @@
 
 <!-- <ion-content> -->
   <ion-list *ngIf="hikingHistory && hikingHistory.length">
-    <ion-item lines="full" *ngFor="let hike of hikingHistory">
+    <!-- update: adding index to each hike -->
+    <ion-item lines="full" *ngFor="let hike of hikingHistory; let i = index">
       <ion-label>
         <h2>Route: {{ hike.routeName }}</h2>
         <h3>{{ hike.distance }} km</h3>
@@ -103,10 +104,14 @@
         <p>Details: {{ hike.hikeDetails }}</p>
         <!-- Add more lines for other properties -->
       </ion-label>
+      <ion-button (click)="viewHike(i)">View</ion-button>
+      <!-- delete and update -->
+      <ion-button (click)="deleteHike(i)">Delete</ion-button>
+      <!-- <ion-button (click)="updateHike(i)">Update</ion-button> -->
     </ion-item>
   </ion-list>
   <div *ngIf="!hikingHistory || !hikingHistory.length">
-    <p>No hiking history found.</p>
+    <p>No hiking history found. Login or register and add something new!</p>
   </div>
   <ion-button expand="block" (click)="getHikeHistory()">Get Hike History</ion-button>
 </ion-content>

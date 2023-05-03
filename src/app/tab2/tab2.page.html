@@ -46,5 +46,498 @@
     </ion-select>
   </ion-item>
 
-  <ion-button color="light" expand="block" (click)="naiCalc()">calculate</ion-button>
+  <ion-button expand="block" (click)="naiCalc()">calculate</ion-button>
+
+   <!-- Following is using ionic checkbox to create a list 
+  for the user to use as a check off tool, and can add there own options at the end -->
+  <h1>Packing List Checker</h1>
+  <p>Check off as you go, starting with:</p>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Back Pack w/ liner</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Hiking boots/shoes</ion-label>
+  </ion-item>
+  <!-- Info Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Pack List</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>The following list is to help you pack whats needed for your time in the hills.
+      </p>
+      <br>
+      <p>Look at your local weather service and plan accordingly, but always be prepared for the unnexpected</p>
+      <br>
+      <p>Does not include sleeping system or shelter, can add below</p>
+    </ion-card-content>
+  </ion-card>
+  <!-- Clothing tabs -->
+  <ion-item-divider>
+    <ion-label id="divider">Clothing</ion-label>
+  </ion-item-divider>
+
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Hiking socks</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>underwear</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>bicycle/thermal shorts</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Pants/shorts</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>T-shirt</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Wet gear</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Warm gear</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Longs-sleeved light top</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Warm hat</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Warm gloves</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Neck warmer</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Sun hat</ion-label>
+  </ion-item>
+  <!-- Info Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Clothing Tips</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>For long and overnight walks always have plenty of spare socks, pre powdering them with baby or foot powder
+        will help stop rub and irritation.
+        Zip lock bags can be an alternative to dry bagging for small items.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <!-- Equipment Tabs -->
+  <ion-item-divider>
+    <ion-label id="divider">Equipment</ion-label>
+  </ion-item-divider>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Map</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Map case</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Compass (adviced w/case)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Map markers</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Mobile Phone/Sat phone/GPS</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Portable charger w/lead</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Cash</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Knife/Multi-Tool</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Dry bags</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Lighter</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Para-chord/rope</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Sunglasses</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Spare laces</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Hiking poles</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Torch</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Headlight</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Spare Baterries</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>whistle</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Insect head net</ion-label>
+  </ion-item>
+  <!-- Info Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Equipment Tips</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Try keep to whats essential for you and the journey.
+      </p>
+      <br>
+      <p>Charge of your devices up until departure and turn to power save mode and minimize power consumption.
+      </p>
+      <br>
+      <p>Check anything with batteries and bring spare. If it has a protruding on switch,
+        adviced to turn batteries upside down when not in use to prevent turning on and running out while packed.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Wash Bag Tabs -->
+  <ion-item-divider>
+    <ion-label id="divider">Wash Bag</ion-label>
+  </ion-item-divider>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Toilet paper</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>wet wipes (bio)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>toothbrush</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Toothpaste</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Face towel</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>sunscreen</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>lib balm</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>vaseline</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Contact lenses/eye care</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>shaveing kit</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Insect repellent</ion-label>
+  </ion-item>
+  <!-- Info Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Wash Kit Tips</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Again keeping to essential for you.
+      </p>
+      <br>
+      <p>Put small amounts of lotions/creams etc into small travel bottles.
+      </p>
+      <br>
+      <p>Depending on the length of you journey, and facilties you may see on your route plan, you may want to pack a
+        shower kit.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <!-- First aid Tabs -->
+  <ion-item-divider>
+    <ion-label id="divider">First Aid Kit</ion-label>
+  </ion-item-divider>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Plasters</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>bandage</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Bandage tape</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Blister blaster</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>tweezers</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Pain killers</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Insect bite relief</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Space blanket</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Personal medication</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Pain relief gel (Deep heat)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Anti-histamines</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Burn gel</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Antiseptic wipes</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Dioralyte sachets</ion-label>
+  </ion-item>
+  <!-- Info Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>First Aid Tips</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>The severity of the terrain may depend on how much med supplies you bring.
+      </p>
+      <br>
+      <p>Always try to carry a small personal pack with plasters, clean wipes and bandage for cuts and small injuries.
+      </p>
+      <br>
+      <p>Sometimes in group walks, one personal will be responsible for a larger medical pack.
+      </p>
+      <br>
+      <p>Writting your contact details and an emergency contact details on your bag & first aid kit could prove useful.
+    </ion-card-content>
+  </ion-card>
+  <!-- Cooking Tabs -->
+  <ion-item-divider>
+    <ion-label id="divider">Cookware</ion-label>
+  </ion-item-divider>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Gas burner</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Gas cannister</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>light/water proof matches</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Mess tin</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Knife,fork,spoon set/ spork</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Mug</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Plate</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Rubbish Bag</ion-label>
+  </ion-item>
+  <!-- Info Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Cooking Tips</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>For longer, harder walks pack as light as possible, share on items where you can. For easy,
+        more relaxed walks think of bringing a pan, oil and food to cook for a hot breakfast.
+      </p>
+      <br>
+      <p>If no mess tin, think of how you will heat water, can your mug double up as a mess tin.
+      </p>
+      <br>
+      <p>Check the weight of your cannister if already used, think of packing a spare if required. Limit using gas to
+        1/2 meals a day.
+      </p>
+      <br>
+      <p>Check your lighter, and keep any matches in a dry bag. alternative can carry a flint and steel.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Rations Tabs -->
+  <ion-item-divider>
+    <ion-label id="divider">Rations</ion-label>
+  </ion-item-divider>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Water 2lt</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Water purification tab</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Main Meals</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Snacks</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Isotanics</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Sweets</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Tea/coffe</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Sweeteners</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>creamers</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Emergency rations</ion-label>
+  </ion-item>
+  <!-- Info Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Cooking Tips</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Main meals could include sandwich/wrap/role for lunch and ration pack/reheatable pack for dinner.
+        You may want a hot breakfast like sauasages, bread and coffee. Just remember to bring cooking equipment.
+        Pre cooked meals (like a rice and chicken curry) can be zipplocked (double) and reheated in the bag in boiling
+        water as an alternative to expensive boil in the bag meals.
+      </p>
+      <br>
+      <p>Packing small bars to eat on the go and on rests are ideal. Nuts and trail mix can also be a perfect snack on
+        the go.
+      </p>
+      <br>
+      <p>Isotonic powders can be easier to carry then drinks and can keep up energy.
+      </p>
+      <br>
+      <p>Having some jellys to chew on on the go can be a boost of energy and moral.
+    </ion-card-content>
+  </ion-card>
+
+    <!-- Rations Tabs -->
+    <ion-item-divider>
+      <ion-label id="divider">Personal Check</ion-label>
+    </ion-item-divider>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-input></ion-input>
+  </ion-item>
 </ion-content>

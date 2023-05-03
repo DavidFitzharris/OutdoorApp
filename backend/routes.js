@@ -15,4 +15,7 @@ router.post('/hikeData', hikesData.newHike);
 //Getting hike data
 router.get('/hikingHistory/:email', hikesData.getUserHikes);
 
+//Delete hikes
+router.delete('/deleteHike/:email/:hikeId', hikesData.deleteHike);
+
 module.exports = router;

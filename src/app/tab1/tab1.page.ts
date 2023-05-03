@@ -80,9 +80,11 @@ move(event: google.maps.MapMouseEvent) {
     this.hikeService.hikes(hike).subscribe(
       response => {
         console.log(response); 
+        this.showHikeAlert(); 
       },
       error => {
         console.log(error);
+        alert("Make sure you are logged in for this service.");
       }
     );
 
@@ -91,7 +93,7 @@ move(event: google.maps.MapMouseEvent) {
   }
 
   //Display if route added
-  showAlert() {
+  showHikeAlert() {
     this.alertController
       .create({
         header: 'New hike added',
@@ -114,11 +116,41 @@ move(event: google.maps.MapMouseEvent) {
       },
       error => {
         console.log(error);
+        alert("Make sure you are logged in for this service.");
       }  
 
     )
   }
 
+  //deleting data by index set in html
+  viewHike(index: number) {
+    this.alertController
+    .create({
+      header: this.hikingHistory[index].routeName,
+      subHeader: this.hikingHistory[index].distance + 'km, rated: ' + this.hikingHistory[index].difficulty,
+      message:
+      this.hikingHistory[index].hikeDetails ,
+      buttons: ['OK'],
+    })
+    .then(res => {
+      res.present();
+    });
+  }
+
+  //deleting data by index set in html
+  deleteHike(index: number) {
+    //this.hikingHistory.splice(index, 1);
+    const hikeId = this.hikingHistory[index]._id;
+    this.hikeService.deleteHike(this.currentUserEmail, hikeId).subscribe(
+      response => {
+          console.log(response);
+          this.hikingHistory.splice(index, 1);
+      },
+      error => {
+          console.log(error);
+      }
+  );
+  }
 
   // private initMap(): void {
   //   this.map = L.map('map', {
@@ -192,15 +224,15 @@ move(event: google.maps.MapMouseEvent) {
   //   }
   // }
 
-  async fetchRouteData() {
-    const points = '48.202596,16.369801|48.208373,16.370401';
-    const routeType = 'bike';
-    try {
-      this.routeData = await this.mapService.getRouteData(points, routeType);
-    } catch (error) {
-      console.error('Error fetching route data:', error);
-    }
-  }
+  // async fetchRouteData() {
+  //   const points = '48.202596,16.369801|48.208373,16.370401';
+  //   const routeType = 'bike';
+  //   try {
+  //     this.routeData = await this.mapService.getRouteData(points, routeType);
+  //   } catch (error) {
+  //     console.error('Error fetching route data:', error);
+  //   }
+  // }
 
 }
 

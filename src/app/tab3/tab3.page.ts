@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/users.services';
 
 @Component({
@@ -55,13 +55,12 @@ export class Tab3Page implements OnInit {
   onSubmit() {
     // //Form input
     // if (this.registrationForm.valid) {
-    // console.log('User registration data:', this.registrationForm);
-    // alert("Name: " + this.registrationForm.value.name);
-    // }else {
-    //       alert("Details: " + this.registrationForm);
-    //       alert(" No Dice");
-    //     }
-    //Checking required fields are valid
+    //   console.log('User registration data:', this.registrationForm);
+    //   alert("Name: " + this.registrationForm.value.name);
+    // } else {
+    //   alert("Details: " + this.registrationForm);
+    //   alert(" No Dice");
+    // }
 
     //Send form input through user.services to our server
     if (this.registrationForm.valid) {

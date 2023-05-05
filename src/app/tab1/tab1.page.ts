@@ -1,11 +1,8 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MapService } from '../services/map.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { GeolocationService } from '@ng-web-apis/geolocation';
-import { UserService } from '../services/users.services';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { HikesService } from '../services/hikes.service';
-import { response } from 'express';
+import { MapService } from '../services/map.service';
+import { UserService } from '../services/users.services';
 //import * as L from 'leaflet';
 
 @Component({

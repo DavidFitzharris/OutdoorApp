@@ -73,17 +73,17 @@ exports.deleteHike = async (req, res) => {
             return res.status(401).json({ message: 'User not found: ' + req.params.email });
         }
 
-        // Find the hike by _id and delete it
+        //Find the hike by obj_id and delete it
         await Hikes.deleteOne({ _id: req.params.hikeId });
 
         //Remove the hike reference from the user's hikingHistory array
         user.hikingHistory = user.hikingHistory.filter(hikeId => !hikeId.equals(req.params.hikeId));
         await user.save();
 
-        // Send a success response
+        //Send a success response
         res.status(200).json({ message: 'Hike deleted successfully.' });
     } catch (error) {
-        // Send an error response
+        //Send an error response
         res.status(500).json({ message: 'Server error. Please try again later.' });
     }
 };
